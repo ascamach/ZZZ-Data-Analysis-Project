@@ -1,2 +1,1 @@
-build_id,run_number,teammate_1,teammate_2,atk,crit_rate,crit_damage,ice_dmg_bonus,pen_ratio,stuns,disorders,frostburns,ex_1,ex_2,lvl_3_ca,ults,chain_attacks,damage_score
-01,01,
+build_id,run_number,teammate_1,teammate_2,stuns,disorders,frostburns,ex_1,ex_2,lvl_3_ca,ults,chain_attacks,damage_score
