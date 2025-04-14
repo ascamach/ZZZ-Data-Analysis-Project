@@ -1,16 +1,26 @@
+import pandas as pd
+
 from teammates import *
 
 # Source of damage formula:
 # https://zenless-zone-zero.fandom.com/wiki/Damage
 
-base_dmg = 0
-dmg_bonus_multi = 0
-crit_multi = 0
+# Access dataframe for build stats
+builds = pd.read_csv('builds.csv')
 
-def_multi = 0
-res_multi = 0
+# Initialize classes
+astra = astra_yao()
+rina = rina()
+nicole = nicole()
 
-dmg_taken_multi = 0
-stunned_multi = 150
+'''
+Initialize variables for calculations
+'''
+base_dmg = dmg_bonus_multi = crit_multi = 0
+
+def_multi = res_multi = 0
+
+dmg_taken_multi = stunned_multi = 150
 
 dmg_standard = 0
+
