@@ -26,4 +26,3 @@ def_multi = res_multi = 0
 dmg_taken_multi = stunned_multi = 150
 
 dmg_standard = 0
-
