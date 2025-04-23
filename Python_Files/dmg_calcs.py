@@ -9,9 +9,12 @@ from teammates import *
 builds = pd.read_csv('builds.csv')
 
 # Initialize classes
-astra = astra_yao()
-rina = rina()
-nicole = nicole()
+# Variables: Name, Atk Buff, Dmg % Buff, Crit Damage Buff
+astra_yao = astra_yao(astra_yao, 1200, 20, 20)
+# Name, Pen Ratio Buff
+rina = rina(rina, 27.6)
+# Name, Def Shred, Crit Rate Buff
+nicole = nicole(nicole, 40, 15)
 
 '''
 Initialize variables for calculations

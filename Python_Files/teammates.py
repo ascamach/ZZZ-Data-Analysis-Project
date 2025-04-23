@@ -5,27 +5,25 @@ class teammate:
         self.name = name
 
 class astra_yao(teammate):
-    def __init__(self, atk_buff, dmg_buff, cdam_buff):
-        super().__init__()
-        self.name = astra_yao
-        # Flat numbers
-        self.atk_buff = 1000
-
-        # Percentages
-        self.dmg_buff = 20
-        self.cdam_buff = 20
+    def __init__(self, name, atk_buff, dmg_buff, crit_dam_buff):
+        super().__init__(name)
+        
+        self.atk_buff = atk_buff
+        
+        self.dmg_buff = dmg_buff
+        self.crit_dam_buff = crit_dam_buff
 
 class rina(teammate):
-    def __init__(self, pen_buff):
-        super().__init__()
-        self.name = rina
+    def __init__(self, name, pen_buff):
+        super().__init__(name)
+        
         # Percentages
-        self.pen_buff = 27.6
+        self.pen_buff = pen_buff
 
 class nicole(teammate):
-    def __init__(self, def_shred, crate_buff):
-        super().__init__()
-        self.name = nicole
+    def __init__(self, name, def_shred, crit_rate_buff):
+        super().__init__(name)
+        
         # Percentages
-        self.def_shred = 40
-        self.crate_buff = 15
+        self.def_shred = def_shred
+        self.crit_rate_buff = crit_rate_buff
