@@ -18,11 +18,10 @@ Pen Ratio: 0%
 ## Functions to add data to dataframe 
 
 initial_atk = 1500
+initial_crit_damage = 75
 
-def data_population(dataframe):
-    new_df = dataframe.copy()
-    print("Accessing dataframe:", dataframe.name)
-    current_atk = initial_atk
+def atk_data(atk):
+    current_atk = atk
 
     atk_data = []
 
@@ -39,9 +38,8 @@ def data_population(dataframe):
                           'total_dmg_bonus': 50,
                           'total_pen_ratio': 0})
     '''
-    new_df = pd.concat([new_df, new_rows.to_frame()], ignore_index=True)
+    
+    return new_rows
 
-    print(new_df)
-    return new_df
-
-stats_data = data_population(stats_data)
+def crit_damage_data(crit_damage, atk_data):
+    current_crit_dmg = crit_damage
