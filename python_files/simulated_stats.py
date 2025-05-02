@@ -1,22 +1,9 @@
 # File to simulate stats for builds
 import pandas as pd
 
-df = pd.DataFrame({'atk': [],
-                   'crit_damage': [],
-                   'crit_rate': [],
-                   'ice_dmg_bonus': [],
-                   'pen_ratio': []
-                   })
-
-df.name = "test"
-
-df2 = pd.DataFrame(columns=['atk', 'crit_damage','crit_rate','ice_dmg_bonus','pen_ratio'])
-
-df2.name = "not test"
-
-df3 = pd.DataFrame({'a': [1, 2 , 3],
-                    'b': [4, 5, 6]
-                    })
+base_df = pd.DataFrame(columns=['atk', 'crit_damage', 'total_dmg_bonus','total_pen_ratio'])
+stats_data = base_df.copy()
+stats_data.name = "big dataframe"
 
 '''
 Baseline Stats
@@ -30,29 +17,31 @@ Pen Ratio: 0%
 
 ## Functions to add data to dataframe 
 
-initial_atk = 1000
-
-def data_test_populate(dataframe):
-    dataframe._append({'atk': 1}, ignore_index=True)
+initial_atk = 1500
 
 def data_population(dataframe):
-
+    new_df = dataframe.copy()
     print("Accessing dataframe:", dataframe.name)
     current_atk = initial_atk
 
-    new_data = []
+    atk_data = []
 
-    while (current_atk != 1100):    
+    while (current_atk <= 4000):    
         # print("adding data to atk column:", current_atk)
-        new_data.append(current_atk)
+        atk_data.append(current_atk)
         current_atk += 10
 
-    print(new_data)
-    new_rows = pd.Series(new_data, name="atk")
+    new_rows = pd.Series(atk_data, name="atk")
 
-    dataframe['atk'] = new_rows.values
+    '''
+    test_row = pd.Series({'atk': 1000,
+                          'crit_damage': 100,
+                          'total_dmg_bonus': 50,
+                          'total_pen_ratio': 0})
+    '''
+    new_df = pd.concat([new_df, new_rows.to_frame()], ignore_index=True)
 
-    return
+    print(new_df)
+    return new_df
 
-data_population(df)
-print(df)
+stats_data = data_population(stats_data)
